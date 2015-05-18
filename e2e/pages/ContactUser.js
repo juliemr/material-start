@@ -9,6 +9,9 @@ var ContactUser = function() {
   };
 
   this.focusedAction = function() {
+    browser.wait(function() {
+      return $('md-bottom-sheet').isPresent();
+    }, 1000);
     return browser.driver.switchTo().activeElement().getText();
   }
 };
